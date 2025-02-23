@@ -213,6 +213,8 @@ class AnimelonDownloader():
 					the file name
 		'''
 		title = resObj["title"]
+		title = title.replace(':','')
+
 		if fileName is None:
 			fileName = os.path.join(self.savePath, title + ".mp4")
 		if (saveSubtitle):
@@ -369,6 +371,7 @@ class AnimelonDownloader():
 		if resObj is None:
 			return ()
 		title = resObj["_id"]
+		title = title.replace(':','')
 		print("Title: ", title)
 		seriesSavePath = os.path.join(self.savePath, title)
 		seasons = resObj["seasons"]
